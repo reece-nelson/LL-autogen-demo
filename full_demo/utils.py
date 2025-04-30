@@ -28,6 +28,7 @@ def create_document(data, folder, file_name):
     doc.add_paragraph(data.budget)
     doc.add_heading("Vacation Itinerary", level=2)
     doc.add_paragraph(data.itinerary)
+    os.makedirs(folder)
     file_path = folder + '/' + file_name
     doc.save(file_path)
     os.system(f'start {file_path}')
